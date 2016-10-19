@@ -41,7 +41,8 @@ public class PM_VOD {
     Path psource;
     Path pdest;
     String logtime;
-    System.getProperty("device");
+    String device=System.getProperty("device");
+    String stream=System.getProperty("stream");
     private String csvpath="C:\\Users\\SeeTest\\seetest-reports\\";
     private String scriptpath="C:\\Users\\SeeTest\\Desktop\\scriptlog\\";
     private String imagepath="C:\\Users\\SeeTest\\Desktop\\img\\";
@@ -49,10 +50,10 @@ public class PM_VOD {
     String result;
     SimpleDateFormat date=new SimpleDateFormat("yyyyMMddHHmmss");
    	@Test
-    public void testVOD_1112(String[] device,String[] stream){
+    public void testVOD_1112(){
     	SimpleDateFormat timeformat = new SimpleDateFormat ("HH:mm:ss");
     	try{
-	        client.setDevice(device[0]);
+	        client.setDevice(device);
 	        client.setDefaultClickDownTime(500);
 	    	result="";
 	    	client.deviceAction("Wake");
@@ -65,14 +66,14 @@ public class PM_VOD {
 		        if(!client.getCurrentApplicationName().equals("tw.friday.video")){
 		        	result="e0020";
 		        	Capture_Screen(result);
-		        	record("log_time="+timeformat.format(new Date())+",device="+device[0]+",result="+result+",");
+		        	record("log_time="+timeformat.format(new Date())+",device="+device+",result="+result+",");
 		        	removerecord();
 		        	fail(result);
 		        }
 		        if(!client.isElementFound("NATIVE", "xpath=//*[@id='pager_container']", 0)){
 		        	result="e0030";
 		        	Capture_Screen(result);
-		        	record("log_time="+timeformat.format(new Date())+",device="+device[0]+",result="+result+",");
+		        	record("log_time="+timeformat.format(new Date())+",device="+device+",result="+result+",");
 		        	removerecord();
 		        	fail(result);
 		        }
@@ -110,21 +111,21 @@ public class PM_VOD {
 		        client.sleep(1000);
 	//Select Stream Server        
 		        client.click("NATIVE", "xpath=//*[@id='levelView']", 0, 1);
-		        if(client.swipeWhileNotFound("Down", 220, 2000, "NATIVE", "xpath=//*[@text='"+stream[i]+"' and @id='text1']", 0, 1000, 5, true)){
+		        if(client.swipeWhileNotFound("Down", 220, 2000, "NATIVE", "xpath=//*[@text='"+stream+"' and @id='text1']", 0, 1000, 5, true)){
 		        }
 	//Play Video
 		        client.startTransaction("vod_play");
 		        int fail=0;
 		        client.click("NATIVE", "xpath=//*[@id='fullVideoButton']", 0, 1);
 		        client.sleep(5000);
-		        result="stream_server="+stream[i]+",result="+playvideo();
+		        result="stream_server="+stream+",result="+playvideo();
 		        client.endTransaction("vod_play");
 	//Applog        
 		        client.stopLoggingDevice();
 	        client.stopStepsGroup();	        
 		      	logtime=date.format(new Date());
 		        File logf=new File(apppath+"log.txt");
-		        logf.renameTo(new File(apppath+device[0].substring(device[0].indexOf(":")+1)+logtime+".txt"));
+		        logf.renameTo(new File(apppath+device.substring(device.indexOf(":")+1)+logtime+".txt"));
 	        client.startStepsGroup("Logout");
 		        while(client.waitForElement("NATIVE", "xpath=//*[@id='menu_back_btn']", 0, 10000)){
 		             client.click("NATIVE", "xpath=//*[@id='menu_back_btn']", 0, 1);
@@ -138,7 +139,7 @@ public class PM_VOD {
         }catch(Exception otherexception){
         	if(result.equalsIgnoreCase("")){
         		Capture_Screen("e0990");
-        		result="stream_server="+stream[i]+",result=e0990";
+        		result="stream_server="+stream+",result=e0990";
         		fail(result);
         	}
         	
@@ -147,7 +148,7 @@ public class PM_VOD {
 	            // If statement
 	        }
         }
-        getrecord(device[0],picname,result);
+        getrecord(device,picname,result);
 //        client.sleep(Integer.parseInt(device[1])*60000);
     	
         
