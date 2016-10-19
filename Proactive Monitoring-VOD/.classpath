@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/clients/java/imageClient.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Program%20Files%20(x86)/Experitest/SeeTest/clients/java/imageClient_doc.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/clients/java/junit-4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/clients/java/mobile-webdriver.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/clients/java/selenium-api-2.42.2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/clients/java/selenium-support-2.44.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/clients/java/ws-commons-util-1.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/clients/java/xmlrpc-client-3.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Experitest/SeeTest/clients/java/xmlrpc-common-3.1.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
