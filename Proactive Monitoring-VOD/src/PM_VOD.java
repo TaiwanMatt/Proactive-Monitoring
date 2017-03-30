@@ -108,6 +108,7 @@ public class PM_VOD {
 		        client.click("NATIVE", "xpath=//*[@id='menu_search_btn']", 0, 1);
 		        client.elementSendText("NATIVE", "xpath=//*[@id='searchView']", 0, "轉檔音頻測試");
 		        client.closeKeyboard();
+			client.sleep(1000);
 		        client.click("NATIVE", "xpath=//*[@id='keywordView' and @text='轉檔音頻測試']", 0, 1);
 		        client.click("NATIVE", "xpath=//*[@id='nameView']", 0, 1);
 		        client.clearDeviceLog();
