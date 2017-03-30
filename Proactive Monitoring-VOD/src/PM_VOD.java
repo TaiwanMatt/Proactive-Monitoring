@@ -28,7 +28,7 @@ import org.junit.*;
 public class PM_VOD {
     private String host = "localhost";
     private int port = 8889;
-    private String projectBaseDirectory = "C:\\Users\\SeeTest\\workspace\\FET_VOD_1112";
+    private String projectBaseDirectory = "C:\\Users\\VOD-Testing\\workspace\\FET_VOD_1112";
     protected Client client = null;
 
     @Before
@@ -41,7 +41,7 @@ public class PM_VOD {
     Path psource;
     Path pdest;
     String logtime;
-    String device="adb:Olsen";
+    String device=System.getProperty("device");
     String stream=System.getProperty("stream");
     String csvpath=System.getProperty("csvpath");
     String scriptpath=System.getProperty("scriptpath");
