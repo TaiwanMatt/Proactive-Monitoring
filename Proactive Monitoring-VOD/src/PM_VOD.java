@@ -54,7 +54,7 @@ public class PM_VOD {
     String result;
     SimpleDateFormat date=new SimpleDateFormat("yyyyMMddHHmmss");
    	@Test
-    public void testVOD_1112(){
+    public void Proactive(){
     	SimpleDateFormat timeformat = new SimpleDateFormat ("HH:mm:ss");
     	try{
 	        client.setDevice(device);
