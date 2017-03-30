@@ -43,10 +43,20 @@ public class PM_VOD {
     String logtime;
     String device=System.getProperty("device");
     String stream=System.getProperty("stream");
-    private String csvpath="C:\\Users\\SeeTest\\seetest-reports\\";
-    private String scriptpath="C:\\Users\\SeeTest\\Desktop\\scriptlog\\";
-    private String imagepath="C:\\Users\\SeeTest\\Desktop\\img\\";
-    private String apppath="C:\\Users\\SeeTest\\Desktop\\applog\\";
+    String scriptpath=System.getProperty("scriptpath");
+    String imagepath=System.getProperty("imagepath");
+    String apppath=System.getProperty("apppath");
+//    private String csvpath="C:\\Users\\SeeTest\\seetest-reports\\";
+//    private String scriptpath="C:\\Users\\SeeTest\\Desktop\\scriptlog\\";
+//    private String imagepath="C:\\Users\\SeeTest\\Desktop\\img\\";
+//    private String apppath="C:\\Users\\SeeTest\\Desktop\\applog\\";
+    String scriptpath=System.getProperty("scriptpath");
+    String imagepath=System.getProperty("imagepath");
+    String apppath=System.getProperty("apppath");
+//    private String csvpath="C:\\Users\\SeeTest\\seetest-reports\\";
+//    private String scriptpath="C:\\Users\\SeeTest\\Desktop\\scriptlog\\";
+//    private String imagepath="C:\\Users\\SeeTest\\Desktop\\img\\";
+//    private String apppath="C:\\Users\\SeeTest\\Desktop\\applog\\";
     String result;
     SimpleDateFormat date=new SimpleDateFormat("yyyyMMddHHmmss");
    	@Test
