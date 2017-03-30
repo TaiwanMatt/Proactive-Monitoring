@@ -41,7 +41,7 @@ public class PM_VOD {
     Path psource;
     Path pdest;
     String logtime;
-    String device=System.getProperty("device");
+    String device="adb:Olsen";
     String stream=System.getProperty("stream");
     String csvpath=System.getProperty("csvpath");
     String scriptpath=System.getProperty("scriptpath");
