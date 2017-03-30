@@ -275,7 +275,7 @@ public class PM_VOD {
 		return result;
     }
     public String playerror(int first){
-    	if(!client.waitForElement("NATIVE", "xpath=//*[@id='progressBar' and @hidden='false']", 0, 30000)){
+    	if(!client.waitForElement("NATIVE", "xpath=//*[@id='progressBar' and @hidden='false']", 0, 60000)){
 //No watermark,Loading    		
     		if(!client.waitForElement("default", "watermark", 0, 10000)){
     			System.out.println("無畫面，載入中");
