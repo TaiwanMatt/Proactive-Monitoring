@@ -398,15 +398,16 @@ public class PM_VOD {
 		logfile.delete();
 	}
 	public void Capture_Screen(String error){
-		logtime=date.format(new Date());
-		psource =new File(client.capture("Capture")).toPath();
-		picname=logtime+error+".jpg";
-		pdest =new File(imagepath+picname).toPath();
-		try {
-			Files.copy(psource,pdest,REPLACE_EXISTING);
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
+		client.report(client.capture("Capture"), error, false);
+//		logtime=date.format(new Date());
+//		psource =new File(client.capture("Capture")).toPath();
+//		picname=logtime+error+".jpg";
+//		pdest =new File(imagepath+picname).toPath();
+//		try {
+//			Files.copy(psource,pdest,REPLACE_EXISTING);
+//		} catch (IOException e1) {
+//			e1.printStackTrace();
+//		}
 	}
 	public static void fail(String message) {
         throw new AssertionFailedError(message);
