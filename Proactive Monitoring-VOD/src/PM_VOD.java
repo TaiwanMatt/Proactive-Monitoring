@@ -42,7 +42,8 @@ public class PM_VOD {
     Path pdest;
     String logtime;
     String device=System.getProperty("device");
-    String stream=System.getProperty("stream");
+    String stream="-";
+//  String stream=System.getProperty("stream");
     String csvpath=System.getProperty("csvpath");
     String scriptpath=System.getProperty("scriptpath");
     String imagepath=System.getProperty("imagepath");
@@ -115,9 +116,9 @@ public class PM_VOD {
 		        client.startLoggingDevice(apppath+"log.txt");
 		        client.sleep(1000);
 	//Select Stream Server        
-		        client.click("NATIVE", "xpath=//*[@id='levelView']", 0, 1);
-		        if(client.swipeWhileNotFound("Down", 220, 2000, "NATIVE", "xpath=//*[@text='"+stream+"' and @id='text1']", 0, 1000, 5, true)){
-		        }
+//		        client.click("NATIVE", "xpath=//*[@id='levelView']", 0, 1);
+//		        if(client.swipeWhileNotFound("Down", 220, 2000, "NATIVE", "xpath=//*[@text='"+stream+"' and @id='text1']", 0, 1000, 5, true)){
+//		        }
 	//Play Video
 		        client.startTransaction("vod_play");
 		        int fail=0;
