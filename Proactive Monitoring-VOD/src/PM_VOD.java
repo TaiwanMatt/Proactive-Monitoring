@@ -113,7 +113,7 @@ public class PM_VOD {
 		        client.click("NATIVE", "xpath=//*[@id='keywordView' and @text='轉檔音頻測試']", 0, 1);
 		        client.click("NATIVE", "xpath=//*[@id='nameView']", 0, 1);
 		        client.clearDeviceLog();
-		        client.startLoggingDevice(apptamppath+"log.txt");
+		        client.startLoggingDevice(apptemppath+"log.txt");
 		        client.sleep(1000);
 	//Select Stream Server        
 //		        client.click("NATIVE", "xpath=//*[@id='levelView']", 0, 1);
@@ -130,7 +130,7 @@ public class PM_VOD {
 		        client.stopLoggingDevice();
 	        client.stopStepsGroup();	        
 		      	logtime=date.format(new Date());
-		        File logf=new File(apptamppath+"log.txt");
+		        File logf=new File(apptemppath+"log.txt");
 		        logf.renameTo(new File(apppath+device.substring(device.indexOf(":")+1)+logtime+".txt"));
 	        client.startStepsGroup("Logout");
 		        while(client.waitForElement("NATIVE", "xpath=//*[@id='menu_back_btn']", 0, 10000)){
