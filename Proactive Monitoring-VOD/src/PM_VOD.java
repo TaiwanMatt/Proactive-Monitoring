@@ -51,7 +51,7 @@ public class PM_VOD {
 //    private String csvpath="C:\\Users\\SeeTest\\seetest-reports\\";
 //    private String scriptpath="C:\\Users\\SeeTest\\Desktop\\scriptlog\\";
 //    private String imagepath="C:\\Users\\SeeTest\\Desktop\\img\\";
-   private String apptemppath="C:\\Users\\SeeTest\\Desktop\\";
+//   private String apptemppath="C:\\Users\\SeeTest\\Desktop\\";
     String result;
     SimpleDateFormat date=new SimpleDateFormat("yyyyMMddHHmmss");
    	@Test
@@ -113,7 +113,7 @@ public class PM_VOD {
 		        client.click("NATIVE", "xpath=//*[@id='keywordView' and @text='轉檔音頻測試']", 0, 1);
 		        client.click("NATIVE", "xpath=//*[@id='nameView']", 0, 1);
 		        client.clearDeviceLog();
-		        client.startLoggingDevice(apptemppath+"log.txt");
+		        client.startLoggingDevice(apppath+"log.txt");
 		        client.sleep(1000);
 	//Select Stream Server        
 //		        client.click("NATIVE", "xpath=//*[@id='levelView']", 0, 1);
@@ -130,7 +130,7 @@ public class PM_VOD {
 		        client.stopLoggingDevice();
 	        client.stopStepsGroup();	        
 		      	logtime=date.format(new Date());
-		        File logf=new File(apptemppath+"log.txt");
+		        File logf=new File(apppath+"log.txt");
 		        logf.renameTo(new File(apppath+device.substring(device.indexOf(":")+1)+logtime+".txt"));
 	        client.startStepsGroup("Logout");
 		        while(client.waitForElement("NATIVE", "xpath=//*[@id='menu_back_btn']", 0, 10000)){
