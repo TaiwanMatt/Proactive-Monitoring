@@ -56,7 +56,8 @@ public class PM_VOD {
     SimpleDateFormat date=new SimpleDateFormat("yyyyMMddHHmmss");
    	@Test
     public void Proactive(){
-    	SimpleDateFormat timeformat = new SimpleDateFormat ("HH:mm:ss");
+//    	SimpleDateFormat timeformat = new SimpleDateFormat ("HH:mm:ss");
+	SimpleDateFormat timeformat = new SimpleDateFormat ("yyyyMMddHHmmss");
     	try{
 	        client.setDevice(device);
 	        client.setDefaultClickDownTime(500);
