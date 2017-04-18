@@ -72,14 +72,14 @@ public class PM_VOD {
 		        if(!client.getCurrentApplicationName().equals("tw.friday.video")){
 		        	result="e0020";
 		        	Capture_Screen(result);
-		        	record("log_time="+timeformat.format(new Date())+",device="+device+",result="+result+",");
+		        	record("log_time="+timeformat.format(new Date())+",device="+device+",result="+result+",","e0000");
 		        	removerecord();
 		        	fail(result);
 		        }
 		        if(!client.isElementFound("NATIVE", "xpath=//*[@id='pager_container']", 0)){
 		        	result="e0030";
 		        	Capture_Screen(result);
-		        	record("log_time="+timeformat.format(new Date())+",device="+device+",result="+result+",");
+		        	record("log_time="+timeformat.format(new Date())+",device="+device+",result="+result+",","e0000");
 		        	removerecord();
 		        	fail(result);
 		        }
@@ -181,7 +181,7 @@ public class PM_VOD {
         	result="e0030";
         	System.out.println("Launch Failed");
         	Capture_Screen(result);
-        	record("log_time="+timeformat.format(new Date())+",result=e0030,");
+        	record("log_time="+timeformat.format(new Date())+",result=e0030,","e0000");
         	removerecord();
         	fail(result);
         }
@@ -196,7 +196,7 @@ public class PM_VOD {
         }else{
         	result="e0040";
         	Capture_Screen("e0040");
-        	record("log_time="+timeformat.format(new Date())+",result="+result+",");
+        	record("log_time="+timeformat.format(new Date())+",result="+result+",","e0000");
         	removerecord();
         	fail(result);
         }
@@ -340,7 +340,7 @@ public class PM_VOD {
         }else{
         	result="e0041";
         	Capture_Screen(result);
-        	record("log_time="+timeformat.format(new Date())+",result="+result+",");
+        	record("log_time="+timeformat.format(new Date())+",result="+result+",","e0000");
         	removerecord();
         	System.out.println("Logout Failed");
         	fail(result);
