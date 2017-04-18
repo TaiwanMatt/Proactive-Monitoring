@@ -77,6 +77,7 @@ public class PM_VOD {
 		        	removerecord();
 		        	fail(result);
 		        }
+		client.click("NATIVE", "xpath=//*[@id='skipButton']", 0, 1);
 		        if(!client.isElementFound("NATIVE", "xpath=//*[@id='pager_container']", 0)){
 		        	result="e0030";
 		        	Capture_Screen(result);
@@ -85,7 +86,6 @@ public class PM_VOD {
 		        	fail(result);
 		        }
 	        client.stopStepsGroup();
-		client.click("NATIVE", "xpath=//*[@id='skipButton']", 0, 1);
 	        client.startStepsGroup("Login");
 		        while(client.isElementFound("NATIVE", "xpath=//*[@id='menu_user_btn']", 0)){
 		        	client.click("NATIVE", "xpath=//*[@id='menu_user_btn']", 0, 1);
