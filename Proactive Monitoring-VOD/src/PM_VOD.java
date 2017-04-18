@@ -60,6 +60,7 @@ public class PM_VOD {
 	SimpleDateFormat timeformat = new SimpleDateFormat ("yyyyMMddHHmmss");
     	try{
 	        client.setDevice(device);
+		client.applicationClearData("tw.friday.video");
 	        client.setDefaultClickDownTime(500);
 	    	result="";
 	    	client.deviceAction("Wake");
@@ -84,6 +85,7 @@ public class PM_VOD {
 		        	fail(result);
 		        }
 	        client.stopStepsGroup();
+		client.click("NATIVE", "xpath=//*[@id='skipButton']", 0, 1);
 	        client.startStepsGroup("Login");
 		        while(client.isElementFound("NATIVE", "xpath=//*[@id='menu_user_btn']", 0)){
 		        	client.click("NATIVE", "xpath=//*[@id='menu_user_btn']", 0, 1);
