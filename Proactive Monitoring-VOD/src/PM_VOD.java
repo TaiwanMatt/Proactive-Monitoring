@@ -77,6 +77,7 @@ public class PM_VOD {
 		        	removerecord();
 		        	fail(result);
 		        }
+		client.setDefaultClickDownTime(500);
 		client.click("NATIVE", "xpath=//*[@id='skipButton']", 0, 1);
 		client.sleep(2000);
 		        if(!client.isElementFound("NATIVE", "xpath=//*[@id='pager_container']", 0)){
