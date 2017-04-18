@@ -52,7 +52,7 @@ public class PM_VOD {
 //    private String scriptpath="C:\\Users\\SeeTest\\Desktop\\scriptlog\\";
 //    private String imagepath="C:\\Users\\SeeTest\\Desktop\\img\\";
 //   private String apptemppath="C:\\Users\\SeeTest\\Desktop\\";
-    String result;
+    String result,errorcode;
     SimpleDateFormat date=new SimpleDateFormat("yyyyMMddHHmmss");
    	@Test
     public void Proactive(){
@@ -125,7 +125,8 @@ public class PM_VOD {
 		        int fail=0;
 		        client.click("NATIVE", "xpath=//*[@id='fullVideoButton']", 0, 1);
 		        client.sleep(5000);
-		        result="stream_server="+stream+",result="+playvideo();
+			errorcode=playvideo();
+		        result="stream_server="+stream+",result="+errorcode;
 		        client.endTransaction("vod_play");
 	//Applog        
 		        client.stopLoggingDevice();
@@ -155,7 +156,7 @@ public class PM_VOD {
 	            // If statement
 	        }
         }
-        getrecord(device,picname,result);
+        getrecord(device,picname,result,errorcode);
 //        client.sleep(Integer.parseInt(device[1])*60000);
     	
         
@@ -346,7 +347,7 @@ public class PM_VOD {
         }
         
     }
-    public void getrecord(String device,String picpath,String result){
+    public void getrecord(String device,String picpath,String result,String errorcode){
       	String log="";
       	String line;
       	BufferedReader br=null;
@@ -377,9 +378,9 @@ public class PM_VOD {
 			
 		}
 		log=log+",image="+picpath+","+result+",";	
-	  	record(log);
+	  	record(log,errorcode);
 	  }
-	public void record(String log){
+	public void record(String log,String errorcode){
       	String filename;
       	SimpleDateFormat date=new SimpleDateFormat("YYYYMMdd");
       	String logtime=date.format(new Date());
@@ -392,6 +393,10 @@ public class PM_VOD {
     			bw.close();
 		} catch (IOException e) {
 				e.printStackTrace();
+		}finally{
+			if(!errorcode.equals("e0000")){
+				fail(errorcode);
+			}
 		}
       	
 	}
