@@ -177,7 +177,7 @@ public class PM_VOD {
 	        client.launch("tw.friday.video/.EventWebViewActivity", true, true);
 	        count+=1;
     	}
-        if(client.waitForElement("NATIVE", "xpath=//*[@id='logoView']", 0, 15000)){
+        if(client.waitForElement("NATIVE", "xpath=//*[@id='skipButton']", 0, 15000)){
             client.endTransaction("vod_launch");
         }else{
         	result="e0030";
