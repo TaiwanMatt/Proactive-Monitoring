@@ -78,7 +78,7 @@ public class PM_VOD {
 		        	fail(result);
 		        }
 		client.setDefaultClickDownTime(500);
-		client.click("NATIVE", "xpath=//*[@id='skipButton']", 0, 1);
+		client.click("NATIVE", "xpath=//*[@id='skipButton']", 0, 2);
 		client.sleep(2000);
 		        if(!client.isElementFound("NATIVE", "xpath=//*[@id='pager_container']", 0)){
 		        	result="e0030";
