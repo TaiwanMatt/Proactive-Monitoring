@@ -28,14 +28,14 @@ import org.junit.*;
 public class PM_VOD {
     private String host = System.getProperty("host");
     private int port = 8889;
-    private String projectBaseDirectory = "C:\\Users\\VOD-Testing\\workspace\\FET_VOD_1112";
+    private String projectBaseDirectory = "\\\\VOD1\\VOD-Testing\\workspace\\FET_VOD_1112";
     protected Client client = null;
 
     @Before
     public void setUp(){
         client = new Client(host, port, true);
         client.setProjectBaseDirectory(projectBaseDirectory);
-        client.setReporter("xml", "C:\\Users\\VOD-Testing\\Desktop\\Report", "VOD");
+        client.setReporter("xml", "\\\\VOD1\\VOD-Testing\\Desktop\\Report", "VOD");
     }
     String picname="-";
     Path psource;
