@@ -26,7 +26,7 @@ import org.junit.*;
  *
 */
 public class PM_VOD {
-    private String host = "localhost";
+    private String host = System.getProperty("host");
     private int port = 8889;
     private String projectBaseDirectory = "C:\\Users\\VOD-Testing\\workspace\\FET_VOD_1112";
     protected Client client = null;
